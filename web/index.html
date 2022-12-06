@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json2echarts</title>
+    <script src="./modules/echarts.min.js"></script>
+    <script src="./config.js"></script>
+    <script src="./default.js"></script>
+  </head>
+  <body style="margin: 0">
+    <div id="container"></div>
+    <script>
+      // assign config
+      const currConfig = Object.assign(defaultConfig, config.chartConfig)
+      // init
+      const chart = echarts.init(document.getElementById('container'), null, {
+        width: config.width ?? 1000,
+        height: config.height ?? 500,
+      })
+      // set options
+      chart.setOption(currConfig)
+    </script>
+  </body>
+</html>
