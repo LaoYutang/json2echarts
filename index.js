@@ -15,7 +15,7 @@ http
         try {
           // params
           const config = JSON.parse(getData)
-          console.info(getData)
+          console.info(new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }), getData)
 
           // write config.js
           await fs.writeFileSync('./web/config.js', 'const config = ' + getData)
@@ -36,6 +36,7 @@ http
           let base64 = 'data:image/png;base64,' + bufferData
 
           // response
+          console.info('make success', base64)
           response.writeHead(200, {
             'Content-Type': 'application/json',
           })
