@@ -26,7 +26,7 @@ http
           })
           const page = await browser.newPage()
           await page.setViewport({ width: config.width ?? 1000, height: config.height ?? 500 })
-          await page.goto('/data/json2echart/web/index.html')
+          await page.goto('http://localhost')
           await page.screenshot({ path: 'screenshot.png' })
           await browser.close()
 
