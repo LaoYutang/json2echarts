@@ -21,7 +21,9 @@ http
           await fs.writeFileSync('./web/config.js', 'const config = ' + getData)
 
           // puppeteer to screenshot
-          const browser = await puppeteer.launch()
+          const browser = await puppeteer.launch({
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
+          })
           const page = await browser.newPage()
           await page.setViewport({ width: config.width ?? 1000, height: config.height ?? 500 })
           await page.goto('/data/json2echart/web/index.html')
