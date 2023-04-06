@@ -1,5 +1,5 @@
 # json2echarts
->使用json配置文件快速生成echarts图表
+使用json配置文件快速生成echarts图表图片
 
 
 ```json 
